@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
-      color: #f0f0f0;
+      background-color: #ffffff;
+      color: #0a0a0a;
       overflow-x: hidden;
     }
     canvas#bg {
@@ -30,16 +30,26 @@
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 1rem;
-      color: #00d8ff;
+      color: #003366;
     }
     .hero h2 {
       font-size: 1.4rem;
       font-weight: 400;
-      color: #ccc;
+      color: #444;
+    }
+    .cta-btn {
+      margin-top: 30px;
+      background-color: #003366;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
     }
     h2.section-title {
       font-size: 1.8rem;
-      color: #00d8ff;
+      color: #003366;
     }
     .team-grid {
       display: flex;
@@ -48,14 +58,14 @@
     }
     .team-member {
       flex: 1 1 250px;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.05);
       padding: 20px;
       border-radius: 12px;
       backdrop-filter: blur(6px);
     }
     p {
       line-height: 1.6;
-      color: #ddd;
+      color: #222;
     }
   </style>
 </head>
@@ -64,8 +74,8 @@
 
 <div class="hero">
   <h1>AI That Sees What You Can’t</h1>
-  <h2>Building India’s Boldest and Smartest Quantum Oral Health Platform</h2>
-  <img src="dr-rs-logo.png" alt="Dr. R's Logo" style="margin-top: 40px; max-width: 220px;" />
+  <h2>Building India’s Boldest and Smartest Oral Health Platform</h2>
+  <button class="cta-btn">Experience Dr. R’s</button>
 </div>
 
 <section>
@@ -117,34 +127,35 @@
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  let stars = [];
-  for (let i = 0; i < 150; i++) {
-    stars.push({
+  let planets = [];
+  for (let i = 0; i < 30; i++) {
+    planets.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: Math.random() * 1.5,
-      d: Math.random() * 1
+      r: Math.random() * 50 + 10,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
+      color: `hsl(${Math.random() * 360}, 70%, 50%)`
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'white';
-    stars.forEach(s => {
+    planets.forEach(p => {
       ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
       ctx.fill();
     });
     update();
   }
 
   function update() {
-    stars.forEach(s => {
-      s.y += s.d;
-      if (s.y > canvas.height) {
-        s.y = 0;
-        s.x = Math.random() * canvas.width;
-      }
+    planets.forEach(p => {
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
     });
   }
 
