@@ -9,13 +9,16 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #ffffff;
-      color: #0a0a0a;
+      color: #111;
       overflow-x: hidden;
+      position: relative;
     }
-    canvas#bg {
+    #particles-js {
       position: fixed;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
     }
     section {
@@ -25,31 +28,21 @@
     }
     .hero {
       text-align: center;
-      padding: 140px 20px 100px;
+      padding: 120px 20px 100px;
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #003366;
+    .hero img {
+      max-width: 300px;
+      height: auto;
     }
     .hero h2 {
       font-size: 1.4rem;
       font-weight: 400;
       color: #444;
-    }
-    .cta-btn {
-      margin-top: 30px;
-      background-color: #003366;
-      color: #fff;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
+      margin-top: 20px;
     }
     h2.section-title {
       font-size: 1.8rem;
-      color: #003366;
+      color: #222;
     }
     .team-grid {
       display: flex;
@@ -58,24 +51,22 @@
     }
     .team-member {
       flex: 1 1 250px;
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(0, 0, 0, 0.03);
       padding: 20px;
       border-radius: 12px;
-      backdrop-filter: blur(6px);
     }
     p {
       line-height: 1.6;
-      color: #222;
+      color: #333;
     }
   </style>
 </head>
 <body>
-<canvas id="bg"></canvas>
+<div id="particles-js"></div>
 
 <div class="hero">
-  <h1>AI That Sees What You Can’t</h1>
+  <img src="dr-rs-logo.png" alt="Dr. R's Logo">
   <h2>Building India’s Boldest and Smartest Oral Health Platform</h2>
-  <button class="cta-btn">Experience Dr. R’s</button>
 </div>
 
 <section>
@@ -121,55 +112,21 @@
   <p>Email us at <strong>your@email.com</strong> or WhatsApp us on <strong>+91-XXXXXXXXXX</strong></p>
 </section>
 
+<!-- Particles.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-  const canvas = document.getElementById('bg');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let planets = [];
-  for (let i = 0; i < 30; i++) {
-    planets.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 50 + 10,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
-      color: `hsl(${Math.random() * 360}, 70%, 50%)`
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    planets.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.color;
-      ctx.fill();
-    });
-    update();
-  }
-
-  function update() {
-    planets.forEach(p => {
-      p.x += p.dx;
-      p.y += p.dy;
-      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    });
-  }
-
-  function animate() {
-    draw();
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#888" },
+      shape: { type: "circle" },
+      opacity: { value: 0.4, random: false },
+      size: { value: 3, random: true },
+      move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
+    },
+    interactivity: { detect_on: "canvas", events: { onhover: { enable: false } } },
+    retina_detect: true
   });
 </script>
-
 </body>
 </html>
