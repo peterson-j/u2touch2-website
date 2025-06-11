@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>U2 Touch2 - Dr. R's</title>
   <style>
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #FFD700;
+  color: #1e1e1e;
+  padding: 10px 14px;
+  font-size: 24px;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  background-color: #e6c200;
+  transform: translateY(-4px);
+}
 
 .hero img.logo {
   max-width: 500px;
@@ -204,5 +223,16 @@ p {
     retina_detect: true
   });
 </script>
+  <script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+<a href="#" class="back-to-top" title="Back to Top">&#8679;</a>
 </body>
 </html>
