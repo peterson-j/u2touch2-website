@@ -23,7 +23,7 @@
   font-weight: bold;
 }
     
-    .section-links {
+.section-links {
   margin-top: -150px;
   padding-top: 0px;
   font-size: 1.1rem;
@@ -42,63 +42,63 @@
   text-decoration: underline;
 }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000000;
-      color: #ffffff;
-      overflow-x: hidden;
-      position: relative;
-    }
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    section {
-      padding: 20px 20px;
-      max-width: 900px;
-      margin: 200px auto 0 100px;
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px 20px;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin: 0; /* Remove top and bottom space */
-      padding: 2px 0;
-    }
-    .hero img {
-      max-width: 500px;
-      height: auto;
-      margin-top: -50px;
-      margin-bottom: 0px
-    }
-    h2.section-title {
-      font-size: 1.8rem;
-      color: #ffffff;
-    }
-    .team-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .team-member {
-      flex: 1 1 250px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-    }
-    p {
-      line-height: 1.6;
-      color: #cccccc;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+section {
+  padding: 20px 20px;
+  max-width: 900px;
+  margin: 200px auto 0 100px;
+}
+.hero {
+  text-align: center;
+  padding: 100px 20px 20px;
+}
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0; /* Remove top and bottom space */
+  padding: 2px 0;
+}
+.hero img {
+  max-width: 500px;
+  height: auto;
+  margin-top: -50px;
+  margin-bottom: 0px
+}
+h2.section-title {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+.team-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.team-member {
+  flex: 1 1 250px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+}
+p {
+  line-height: 1.6;
+  color: #cccccc;
+}
   </style>
 </head>
 <body>
@@ -118,27 +118,27 @@
   </div>
 </div>
 
-<section>
+<section id="future">
   <h2 class="section-title">Engineering the Future of Dental Care</h2>
   <p>"U2 Touch2 Solutions LLP" is a deep-tech healthcare venture reimagining oral healthcare with AI, Diagnostics, Mathematical Modeling and Optimization. We are building smart tools for anomaly detection & progression to patient conversion — from first to the last mile.</p>
 </section>
 
-<section>
+<section id="brain">
   <h2 class="section-title">The Brain Behind the Bite</h2>
   <p>Dr. R’s AI engine detects oral anomalies from images, models disease progression, and connects patients to local dentists. Accessible via kiosk, app, or intraoral camera — it’s preventive care for everyone.</p>
 </section>
 
-<section>
+<section id="practice">
   <h2 class="section-title">Power Your Practice with Dr. R’s</h2>
   <p>Clinics can plug into our AI platform to get qualified leads, co-brand with Dr. R’s, and boost their practice through smart, data-driven care. We offer revenue share and AI support — no tech skills needed.</p>
 </section>
 
-<section>
+<section id="smile">
   <h2 class="section-title">From ₹1 to a Life-Saving Smile</h2>
   <p>We conduct oral health screening camps in schools, colleges, and communities using our image-based AI. 80% of users carry untreated issues. Our low-cost model helps identify and act early — affordably.</p>
 </section>
 
-<section>
+<section id="team">
   <h2 class="section-title">Human Intelligence Behind the AI</h2>
   <div class="team-grid">
     <div class="team-member">
@@ -156,7 +156,7 @@
   </div>
 </section>
 
-<section>
+<section id="contact">
   <h2 class="section-title">Let’s Co-Create the Future</h2>
   <p>Email us at <strong>your@email.com</strong> or WhatsApp us on <strong>+91-XXXXXXXXXX</strong></p>
 </section>
@@ -170,7 +170,12 @@
       shape: { type: "circle" },
       opacity: { value: 0.3, random: false },
       size: { value: 2.5, random: true },
-      move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
+      move: {
+        enable: true,
+        speed: 2.5,
+        direction: "none",
+        out_mode: "out"
+      }
     },
     interactivity: {
       detect_on: "canvas",
