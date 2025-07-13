@@ -55,10 +55,12 @@
     .boot-message {
       font-size: 1.1rem;
       color: #FFD700;
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-weight: 500;
+      margin-top:10px;
+      margin-bottom: 15px;
       opacity: 1;
-      transition: opacity 1s ease;
+      transition: opacity 0.8s ease;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .boot-message.fade-out {
@@ -87,9 +89,9 @@
       const boot = document.getElementById('boot-msg');
       if (boot) {
         boot.classList.add('fade-out');
-        setTimeout(() => boot.style.display = 'none', 1000);
+        setTimeout(() => boot.style.display = 'none', 800);
       }
-    }, 3000); // Show for 3 seconds, then fade out
+    }, 2000); // Show for 2 seconds, then fade out
   </script>
 
 </body>
