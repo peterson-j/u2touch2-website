@@ -49,30 +49,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       display: block;
-      margin: 0 auto 30px;
-    }
-
-    .iframe-wrapper {
-      position: relative;
-      max-width: 960px;
       margin: -30px auto 30px;
-    }
-
-    #loading {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(30, 30, 30, 0.9);
-      color: #FFD700;
-      font-weight: bold;
-      font-size: 1.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 12px;
-      z-index: 10;
     }
   </style>
 </head>
@@ -84,21 +61,10 @@
     <a href="index.html" class="back-link">← Back to Homepage</a>
   </div>
 
-  <div class="iframe-wrapper">
-    <div id="loading">⚙️ AI is booting up... Please wait.</div>
-
-    <iframe 
-      src="https://peterson-2025-anomaly-detection-beta-v1.hf.space" 
-      frameborder="0">
-    </iframe>
-  </div>
-
-  <script>
-    setTimeout(() => {
-      const loader = document.getElementById("loading");
-      if (loader) loader.style.display = "none";
-    }, 2000); // Show loader for 2 seconds
-  </script>
+  <iframe 
+    src="https://peterson-2025-anomaly-detection-beta-v1.hf.space" 
+    frameborder="0">
+  </iframe>
 
 </body>
 </html>
