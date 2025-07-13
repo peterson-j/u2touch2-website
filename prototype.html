@@ -62,28 +62,9 @@
   </div>
 
   <iframe 
-<!-- Show this while AI loads -->
-<div id="loading" style="color: #FFD700; font-weight: bold; text-align: center; margin-top: 40px; font-size: 1.2rem;">
-  ⚙️ AI is booting up... Please wait.
-</div>
-
-<!-- Actual app, hidden until ready -->
-<div id="app" style="display: none;">
-  <iframe 
     src="https://peterson-2025-anomaly-detection-beta-v1.hf.space" 
     frameborder="0">
   </iframe>
-</div>
-
-  </iframe>
-<script>
-  window.addEventListener("load", function () {
-    setTimeout(() => {
-      document.getElementById("loading").style.display = "none";
-      document.getElementById("app").style.display = "block";
-    }, 2000); // Simulate AI load time
-  });
-</script>
 
 </body>
 </html>
