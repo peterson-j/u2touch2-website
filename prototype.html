@@ -5,34 +5,25 @@
   <title>Dr. R's Beta V1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    #vanta-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
-
     body {
-      background-color: #2a2a2a;
+      background-color: #1e1e1e;
       color: #FFD700;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 12px;
+      padding: 20px;
+      text-align: center;
     }
 
     .top-bar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-top: -30px;
-      margin-bottom: 10px;
-      padding: 0 12px;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 0 20px;
     }
 
     .logo {
-      max-height: 150px;
+      max-height: 130px;
     }
 
     .back-link {
@@ -52,22 +43,17 @@
     iframe {
       max-width: 960px;
       width: 100%;
-      height: 500px;
+      height: 520px;
       border: 2px solid #FFD700;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       display: block;
-      margin: -30px auto 30px;
+      margin: 0 auto 30px;
     }
   </style>
-
-  <!-- Vanta.js ORBIT + Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.orbit.min.js"></script>
 </head>
-<body>
 
-  <div id="vanta-bg"></div>
+<body>
 
   <div class="top-bar">
     <img src="dr-rs-logo.png" alt="Dr. R's Logo" class="logo">
@@ -78,21 +64,6 @@
     src="https://peterson-2025-anomaly-detection-beta-v1.hf.space" 
     frameborder="0">
   </iframe>
-
-  <script>
-    VANTA.ORBIT({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      backgroundColor: 0x1e1e1e,
-      color: 0xffd700
-    })
-  </script>
 
 </body>
 </html>
