@@ -13,6 +13,20 @@
   <title>Dr. R's – AI-Powered Oral Health Platform by U2 Touch2</title>
 
   <style>
+
+#site-header {
+  position: absolute;   /* keeps it at the top */
+  top: 10px;
+  left: 10px;
+  z-index: 1000;        /* makes sure it stays above other elements */
+}
+
+.site-logo {
+  height: 50px;         /* adjust size as needed */
+  width: auto;
+}
+
+    
     /* CSS code remains unchanged */
 
         .explore-button {
@@ -300,6 +314,13 @@
 
 <body>
 
+<!-- Top-left logo header -->
+<header id="site-header">
+  <a href="#top" title="Home">
+    <img src="u2-touch2.png" alt="Dr. R's Logo" class="site-logo">
+  </a>
+</header>
+  
   <div id="particles-js"></div>
 
   <div class="hero" id="top">
